@@ -1,4 +1,5 @@
 import React from "react";
+import CartWidget from "../components/CartWidget";
 
 const NavBar = () => {
   return (
@@ -8,6 +9,7 @@ const NavBar = () => {
       aria-label="Basic example"
       className="navButtons container"
     >
+      <h1>Mi E-Commerce</h1>
       <button type="button" class="btn btn-primary">
         Home
       </button>
@@ -23,9 +25,7 @@ const NavBar = () => {
       <button type="button" class="btn btn-primary">
         Contacto
       </button>
-      <button type="button" class="btn btn-primary">
-        Cart
-      </button>
+      <CartWidget />
     </div>
   );
 };

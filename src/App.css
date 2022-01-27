@@ -6,6 +6,9 @@
 .App-header {
   background: linear-gradient(#7777c2, grey);
 }
+.logo {
+  width: 150px;
+}
 .navButtons {
   display: flex;
   justify-content: flex-end;
@@ -13,4 +16,7 @@
 .btn {
   background-color: transparent;
   border-color: white;
+}
+.cart-icon {
+  color: white;
 }

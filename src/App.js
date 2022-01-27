@@ -1,13 +1,16 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
+import logo from "./logo.png";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Mi E-Commerce</h1>
+        <img src={logo} alt="logo" className="logo" />
         <NavBar />
       </header>
+      <ItemListContainer title="Bienvenido" />
     </div>
   );
 }
