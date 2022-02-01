@@ -1,6 +1,11 @@
-import React from "react";
+import ItemCount from "./ItemCount";
 const ItemListContainer = ({ title }) => {
-  return <div>{title}</div>;
+  return (
+    <div>
+      {title}
+      <ItemCount />
+    </div>
+  );
 };
 
 export default ItemListContainer;

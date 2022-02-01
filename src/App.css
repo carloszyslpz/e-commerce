@@ -20,3 +20,19 @@
 .cart-icon {
   color: white;
 }
+.items {
+  display: flex;
+}
+.card {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  background: linear-gradient(#7777c2, grey);
+}
+.card-img-top {
+  max-width: 250px;
+}
+.addButtons {
+  display: flex;
+  justify-content: center;
+}
