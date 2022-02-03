@@ -1,8 +1,11 @@
 import { useState } from "react";
-import Album from "../components/album.jpg";
 
 const ItemCount = () => {
   const [counter, setCounter] = useState(0);
+
+  function onAdd() {
+    alert("Agregaste un Producto");
+  }
 
   const counterUp = () => {
     if (counter < 15) {
@@ -16,14 +19,11 @@ const ItemCount = () => {
   };
   return (
     <div className="card">
-      <img src={Album} className="card-img-top" alt="..." />
+      <img src="" className="card-img-top" alt="..." />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <div className="addButtons">
+        <h5 className="card-title"></h5>
+        <p className="card-text"></p>
+        <div className="addButtons container">
           <button
             onClick={counterDown}
             type="button "
@@ -38,6 +38,12 @@ const ItemCount = () => {
             className="btn btn-primary"
           >
             <span className="material-icons">add</span>
+          </button>
+        </div>
+        <br />
+        <div className="addCart">
+          <button onClick={onAdd} type="button " className="btn btn-primary">
+            Agregar a Carrito
           </button>
         </div>
       </div>
