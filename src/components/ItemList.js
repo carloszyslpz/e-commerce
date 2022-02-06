@@ -1,17 +1,23 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
 const ItemList = () => {
-  const [movie, setMovies] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.tvmaze.com/search/shows?q=golden%20girls")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((json) => console.log(json));
-  });
+      .then((json) => setUsers(json));
+  }, []);
 
   return (
-    <div>
-      <Item />
+    <div className="productos">
+      {users.map((user) => {
+        return (
+          <div key={user.id}>
+            <Item data={user} />
+          </div>
+        );
+      })}
     </div>
   );
 };

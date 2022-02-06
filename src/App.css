@@ -3,11 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background: black;
+}
 .App-header {
   background: linear-gradient(#7777c2, grey);
+  max-width: 100%;
 }
 .logo {
-  width: 150px;
+  width: 100px;
 }
 .navButtons {
   display: flex;
@@ -20,14 +24,22 @@
 .cart-icon {
   color: white;
 }
+.productos {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: flex-end;
+}
 .items {
   display: flex;
 }
 .card {
   display: flex;
   align-items: center;
-  max-width: 300px;
+  max-width: 250px;
   background: linear-gradient(#7777c2, grey);
+  text-align: center;
 }
 .card-img-top {
   max-width: 250px;
@@ -35,8 +47,9 @@
 .addButtons {
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 .addCart {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
