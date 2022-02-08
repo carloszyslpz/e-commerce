@@ -28,8 +28,9 @@ body {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin: auto;
-  align-items: flex-end;
+  margin: 30;
+  max-width: 345;
+  align-items: stretch;
 }
 .items {
   display: flex;
@@ -37,7 +38,7 @@ body {
 .card {
   display: flex;
   align-items: center;
-  max-width: 250px;
+  max-width: 300px;
   background: linear-gradient(#7777c2, grey);
   text-align: center;
 }
