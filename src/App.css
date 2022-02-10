@@ -4,25 +4,30 @@
   box-sizing: border-box;
 }
 body {
-  background: black;
+  background: whitesmoke;
 }
 .App-header {
   background: linear-gradient(#7777c2, grey);
   max-width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .logo {
   width: 100px;
 }
-.navButtons {
-  display: flex;
-  justify-content: flex-end;
-}
 .btn {
   background-color: transparent;
-  border-color: white;
+  border-color: black;
+  color: black;
 }
-.cart-icon {
-  color: white;
+.nav-link {
+  color: black;
+}
+.navItems {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .productos {
   display: flex;
@@ -39,8 +44,9 @@ body {
   display: flex;
   align-items: center;
   max-width: 300px;
-  background: linear-gradient(#7777c2, grey);
+  background: transparent;
   text-align: center;
+  box-shadow: 5px 5px black;
 }
 .card-img-top {
   max-width: 250px;

@@ -1,17 +1,36 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
-import logo from "./logo.png";
-import ItemListContainer from "./components/ItemListContainer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//COMPONENTS
+import Header from "./components/Header/Header";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/footer";
+
+//VIEWS
+
+import Home from "./components/views/Home/Home";
+import Nosotros from "./components/views/Nosotros/Nosotros";
+import Productos from "./components/views/Productos/Productos";
+import Registro from "./components/views/Registro/Registro";
+import Contacto from "./components/views/Contacto/Contacto";
+import ItemDetailContainer from "./components/views/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="logo" className="logo" />
+    <Router>
+      <div>
+        <Header />
         <NavBar />
-      </header>
-      <ItemListContainer title="Bienvenido" />
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Nosotros" element={<Nosotros />} />
+          <Route path="/Productos" element={<Productos />} />
+          <Route path="/Registro" element={<Registro />} />
+          <Route path="/Contacto" element={<Contacto />} />
+          <Route path="/:Detalle/:id" element={<ItemDetailContainer />} />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
 }
 

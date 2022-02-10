@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   const [detalles, setDetalles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  setTimeout(() => {
-    setLoading(false);
-  }, 2000);
+  let id = useParams();
+
+  let productoId = id.id;
+  console.log(productoId);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/1")
+    fetch(`https://fakestoreapi.com/products/${productoId}`)
       .then((response) => response.json())
       .then((json) => setDetalles(json));
-  }, []);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, [productoId]);
 
   return (
     <div>
@@ -22,7 +27,11 @@ const ItemDetailContainer = () => {
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (
-        <ItemDetail data={detalles} />
+        <div>
+          <div key={detalles.id}>
+            <ItemDetail data={detalles} />
+          </div>
+        </div>
       )}
     </div>
   );
