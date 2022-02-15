@@ -9,7 +9,6 @@ const ItemDetailContainer = () => {
   let id = useParams();
 
   let productoId = id.id;
-  console.log(productoId);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${productoId}`)
@@ -23,7 +22,7 @@ const ItemDetailContainer = () => {
   return (
     <div>
       {loading ? (
-        <div className="spinner-grow text-light" role="status">
+        <div className="spinner-grow" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (

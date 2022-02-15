@@ -18,7 +18,7 @@ const ItemList = () => {
   return (
     <div>
       {loading ? (
-        <div className="spinner-grow text-light" role="status">
+        <div className="spinner-grow" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (

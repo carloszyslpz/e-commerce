@@ -13,6 +13,7 @@ import Productos from "./components/views/Productos/Productos";
 import Registro from "./components/views/Registro/Registro";
 import Contacto from "./components/views/Contacto/Contacto";
 import ItemDetailContainer from "./components/views/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/views/Cart/Cart";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Productos" element={<Productos />} />
           <Route path="/Registro" element={<Registro />} />
           <Route path="/Contacto" element={<Contacto />} />
+          <Route path="/Cart" element={<Cart />} />
           <Route path="/:Detalle/:id" element={<ItemDetailContainer />} />
         </Routes>
       </div>
