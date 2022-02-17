@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/footer";
+import { ProductProvider } from "./components/CartContext/CartContext";
 
 //VIEWS
 
@@ -18,20 +19,22 @@ import Cart from "./components/views/Cart/Cart";
 function App() {
   return (
     <Router>
-      <div>
-        <Header />
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Nosotros" element={<Nosotros />} />
-          <Route path="/Productos" element={<Productos />} />
-          <Route path="/Registro" element={<Registro />} />
-          <Route path="/Contacto" element={<Contacto />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/:Detalle/:id" element={<ItemDetailContainer />} />
-        </Routes>
-      </div>
-      <Footer />
+      <ProductProvider>
+        <div>
+          <Header />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Nosotros" element={<Nosotros />} />
+            <Route path="/Productos" element={<Productos />} />
+            <Route path="/Registro" element={<Registro />} />
+            <Route path="/Contacto" element={<Contacto />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/:Detalle/:id" element={<ItemDetailContainer />} />
+          </Routes>
+        </div>
+        <Footer />
+      </ProductProvider>
     </Router>
   );
 }

@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Item from "./Item";
+import { CartContext } from "../CartContext/CartContext";
 
 const ItemList = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [item, setItem] = useContext(CartContext);
 
   setTimeout(() => {
     setLoading(false);
