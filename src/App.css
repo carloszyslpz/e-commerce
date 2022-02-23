@@ -15,6 +15,10 @@ body {
 .logo {
   width: 100px;
 }
+.cartIcon {
+  background-color: transparent;
+  border: none;
+}
 .btn {
   background-color: transparent;
   border-color: black;

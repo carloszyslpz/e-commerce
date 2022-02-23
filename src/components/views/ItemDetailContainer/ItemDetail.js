@@ -1,9 +1,16 @@
 import ItemCount from "./ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../CartContext/CartContext";
 
 const ItemDetail = ({ data }) => {
   const [agregado, setAgregado] = useState();
+  const { addItem } = useContext(CartContext);
+
+  function onAdd(cantidad) {
+    setAgregado(false);
+    addItem({ data, cantidad });
+  }
 
   return (
     <div className="card container">
@@ -14,7 +21,7 @@ const ItemDetail = ({ data }) => {
         <h3 className="card-text">${data.price}</h3>
         {agregado ? (
           <Link to={"/Cart"}>
-            <button type="button " className="btn btn-primary">
+            <button onClick={onAdd} type="button " className="btn btn-primary">
               Terminar mi Compra
             </button>
           </Link>
