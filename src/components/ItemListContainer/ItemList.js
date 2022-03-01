@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
+import { Link } from "react-router-dom";
 
-const ItemList = () => {
+const ItemList = ({ items }) => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +14,7 @@ const ItemList = () => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((result) => setProductos(result));
-  }, []);
+  });
 
   return (
     <div>
@@ -26,7 +27,9 @@ const ItemList = () => {
           {productos.map((productos) => {
             return (
               <div key={productos.id}>
-                <Item data={productos} />
+                <Link to={`/Detalle/${productos.id}`}>
+                  <Item data={productos} />
+                </Link>
               </div>
             );
           })}

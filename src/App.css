@@ -55,6 +55,8 @@ body {
   background: transparent;
   text-align: center;
   box-shadow: 3px 3px grey;
+  box-sizing: border-box;
+  min-height: 200px;
 }
 .card-img-top {
   max-width: 250px;

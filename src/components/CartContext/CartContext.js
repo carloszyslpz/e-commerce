@@ -5,29 +5,26 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [prod, setProd] = useState([]);
 
+  function cantidadItems() {
+    return prod.reduce((total, item) => total + item.cantidad, 0);
+  }
+
   function removeItem(id) {
-    const updateProd = prod.filter((data) => data.id !== id);
+    const updateProd = prod.filter((item) => item.id !== id);
     setProd(updateProd);
   }
   function addItem(infoItem) {
-    const foundItem = prod.find((data) => data.id === infoItem.item.id);
+    const foundItem = prod.find((item) => item.id === infoItem.item.id);
     if (foundItem) {
       foundItem.infoItemcantidad += prod.cantidad;
-    } else {
-      prod.push({
-        id: infoItem.data.id,
-        name: infoItem.data.title,
-        descripcion: infoItem.data.description,
-        price: infoItem.data.price,
-        imagen: infoItem.data.image,
-        cantidad: infoItem.cantidad,
-      });
     }
     setProd([...prod]);
   }
 
   return (
-    <CartContext.Provider value={{ prod, addItem, setProd, removeItem }}>
+    <CartContext.Provider
+      value={{ prod, addItem, setProd, removeItem, cantidadItems }}
+    >
       {children}
     </CartContext.Provider>
   );
