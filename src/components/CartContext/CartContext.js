@@ -4,6 +4,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [prod, setProd] = useState([]);
+  const [carga, setCarga] = useState(false);
 
   function cantidadItems() {
     return prod.reduce((total, item) => total + item.cantidad, 0);
@@ -14,16 +15,33 @@ export const CartProvider = ({ children }) => {
     setProd(updateProd);
   }
   function addItem(infoItem) {
-    const foundItem = prod.find((item) => item.id === infoItem.item.id);
+    const foundItem = prod.find((item) => item.id === infoItem.id);
     if (foundItem) {
       foundItem.infoItemcantidad += prod.cantidad;
+    } else {
+      prod.push({
+        id: infoItem.id,
+        title: infoItem.title,
+        description: infoItem.description,
+        price: infoItem.price,
+        image: infoItem.image,
+        cantidad: infoItem.cantidad,
+      });
     }
     setProd([...prod]);
   }
 
   return (
     <CartContext.Provider
-      value={{ prod, addItem, setProd, removeItem, cantidadItems }}
+      value={{
+        prod,
+        carga,
+        addItem,
+        setProd,
+        removeItem,
+        setCarga,
+        cantidadItems,
+      }}
     >
       {children}
     </CartContext.Provider>

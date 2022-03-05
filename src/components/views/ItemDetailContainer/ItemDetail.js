@@ -5,10 +5,10 @@ import { CartContext } from "../../CartContext/CartContext";
 
 const ItemDetail = ({ data }) => {
   const [agregado, setAgregado] = useState();
-  const { addItem } = useContext(CartContext);
+  const { addItem, setCarga } = useContext(CartContext);
 
   function onAdd(cantidad) {
-    setAgregado(false);
+    setCarga(false);
     addItem({ data, cantidad });
   }
 

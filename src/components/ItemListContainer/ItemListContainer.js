@@ -2,10 +2,10 @@ import ItemList from "./ItemList";
 import { useState } from "react";
 
 const ItemListContainer = () => {
-  const [productos] = useState([]);
+  const [items] = useState([]);
   return (
     <div>
-      <ItemList items={productos} />
+      <ItemList items={items} />
     </div>
   );
 };
