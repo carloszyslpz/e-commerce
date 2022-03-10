@@ -17,14 +17,14 @@ export const CartProvider = ({ children }) => {
   function addItem(infoItem) {
     const foundItem = prod.find((item) => item.id === infoItem.id);
     if (foundItem) {
-      foundItem.infoItemcantidad += prod.cantidad;
+      foundItem.infoItemcantidad += prod.data.cantidad;
     } else {
       prod.push({
-        id: infoItem.id,
-        title: infoItem.title,
-        description: infoItem.description,
-        price: infoItem.price,
-        image: infoItem.image,
+        id: infoItem.data.id,
+        title: infoItem.data.title,
+        description: infoItem.data.description,
+        price: infoItem.data.price,
+        image: infoItem.data.image,
         cantidad: infoItem.cantidad,
       });
     }

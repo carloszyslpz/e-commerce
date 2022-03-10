@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const ItemCount = ({ setAgregado }) => {
-  const [counter, setCounter] = useState(0);
+const ItemCount = ({ onAdd }) => {
   const [btnActivo, setBtnActivo] = useState(true);
+  const [counter, setCounter] = useState(0);
 
   const counterUp = () => {
     if (counter < 15) {
@@ -16,8 +16,8 @@ const ItemCount = ({ setAgregado }) => {
       setBtnActivo(true);
     }
   };
-  const onAdd = () => {
-    setAgregado(counter);
+  const add = () => {
+    onAdd(counter);
     alert("Agregaste un producto a tu carrito");
   };
   return (
@@ -38,7 +38,7 @@ const ItemCount = ({ setAgregado }) => {
       <br />
       <div className="addCart">
         <button
-          onClick={onAdd}
+          onClick={add}
           disabled={btnActivo}
           type="button"
           className="btn btn-primary"

@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { prod, setProd, removeItem } = useContext(CartContext);
-  let precioTotal = prod.reduce(
-    (total, item) => total + item.cantidad * item.price,
-    0
-  );
+  let precioTotal = prod.reduce((total, item) => total * item.price, 0);
   return (
     <div>
       {prod.length > 0 ? (
@@ -15,7 +12,7 @@ const Cart = () => {
           return (
             <div key={item.id}>
               <div>
-                ({item.image} <h2>({item.cantidad})</h2>
+                ({item.image}
                 <h5>{item.title}</h5>
                 <p>${item.price}</p>
               </div>

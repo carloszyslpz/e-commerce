@@ -19,19 +19,17 @@ function App() {
   return (
     <Router>
       <CartProvider>
-        <div>
-          <Header />
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Nosotros" element={<Nosotros />} />
-            <Route path="/Productos" element={<Productos />} />
-            <Route path="/Registro" element={<Registro />} />
-            <Route path="/Contacto" element={<Contacto />} />
-            <Route path="/Cart" element={<Cart />} />
-            <Route path="/:Detalle/:id" element={<ItemDetailContainer />} />
-          </Routes>
-        </div>
+        <Header />
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Nosotros" element={<Nosotros />} />
+          <Route path="/Productos" element={<Productos />} />
+          <Route path="/Registro" element={<Registro />} />
+          <Route path="/Contacto" element={<Contacto />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/:Detalle/:id" element={<ItemDetailContainer />} />
+        </Routes>
         <Footer />
       </CartProvider>
     </Router>

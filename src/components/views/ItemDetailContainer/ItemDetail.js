@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../CartContext/CartContext";
 
 const ItemDetail = ({ data }) => {
-  const [agregado, setAgregado] = useState();
+  const [agregado, setAgregado] = useState(true);
   const { addItem, setCarga } = useContext(CartContext);
 
   function onAdd(cantidad) {
     setCarga(false);
+    setAgregado(false);
     addItem({ data, cantidad });
   }
 
@@ -19,16 +20,16 @@ const ItemDetail = ({ data }) => {
         <img src={data.image} alt="producto" width={"150px"}></img>
         <p>{data.description}</p>
         <h3 className="card-text">${data.price}</h3>
-        {agregado ? (
-          <Link to={"/Cart"}>
-            <button onClick={onAdd} type="button " className="btn btn-primary">
-              Terminar mi Compra
-            </button>
-          </Link>
-        ) : (
-          <ItemCount onAdd={agregado} setAgregado={setAgregado} />
-        )}
       </div>
+      {agregado ? (
+        <ItemCount onAdd={onAdd} setAgregado={setAgregado} />
+      ) : (
+        <Link to={"/Cart"}>
+          <button onClick={onAdd} type="button " className="btn btn-primary">
+            Terminar mi Compra
+          </button>
+        </Link>
+      )}
     </div>
   );
 };
