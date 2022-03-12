@@ -1,6 +1,7 @@
-const Nosotros = () => {
+const AboutUs = () => {
   return (
     <div>
+      {" "}
       <h1>Nosotros</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, officiis.
@@ -12,4 +13,4 @@ const Nosotros = () => {
   );
 };
 
-export default Nosotros;
+export default AboutUs;

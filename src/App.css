@@ -16,8 +16,12 @@ body {
   width: 100px;
 }
 .cartIcon {
+  display: flex;
   background-color: transparent;
   border: none;
+}
+.numElement {
+  display: flex;
 }
 .btn {
   background-color: transparent;

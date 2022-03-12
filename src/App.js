@@ -8,10 +8,11 @@ import { CartProvider } from "./components/CartContext/CartContext";
 //VIEWS
 
 import Home from "./components/views/Home/Home";
-import Nosotros from "./components/views/Nosotros/Nosotros";
-import Productos from "./components/views/Productos/Productos";
-import Registro from "./components/views/Registro/Registro";
-import Contacto from "./components/views/Contacto/Contacto";
+import Electronics from "./components/views/Categories/Electronics/Electronics";
+import Jewelry from "./components/views/Categories/Jewelry/Jewelry";
+import MenClothing from "./components/views/Categories/MenClothing/MenClothing";
+import WomenClothing from "./components/views/Categories/WomenClothing/WomenClothing";
+import AboutUs from "./components/views/Categories/AboutUs/AboutUs";
 import ItemDetailContainer from "./components/views/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/views/Cart/Cart";
 
@@ -23,10 +24,11 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Nosotros" element={<Nosotros />} />
-          <Route path="/Productos" element={<Productos />} />
-          <Route path="/Registro" element={<Registro />} />
-          <Route path="/Contacto" element={<Contacto />} />
+          <Route path="/electronics" element={<Electronics />} />
+          <Route path="/jewelry" element={<Jewelry />} />
+          <Route path="/men's%20clothing" element={<MenClothing />} />
+          <Route path="/women's%20clothing" element={<WomenClothing />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/:Detalle/:id" element={<ItemDetailContainer />} />
         </Routes>

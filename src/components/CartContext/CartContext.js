@@ -15,9 +15,9 @@ export const CartProvider = ({ children }) => {
     setProd(updateProd);
   }
   function addItem(infoItem) {
-    const foundItem = prod.find((item) => item.id === infoItem.id);
+    const foundItem = prod.find((item) => item.id === infoItem.data.id);
     if (foundItem) {
-      foundItem.infoItemcantidad += prod.data.cantidad;
+      foundItem.infoItemcantidad += prod.cantidad;
     } else {
       prod.push({
         id: infoItem.data.id,
