@@ -1,6 +1,9 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 
+import { db } from "../../Firebase/FirebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
+
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,10 +13,18 @@ const ItemListContainer = () => {
   }, 1000);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((result) => setProductos(result));
-  });
+    const getProducts = async () => {
+      const q = query(collection(db, "productos"));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setProductos(docs);
+    };
+    getProducts([]);
+  }, []);
 
   return (
     <div>
