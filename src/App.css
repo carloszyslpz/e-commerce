@@ -43,27 +43,24 @@ body {
 }
 .productos {
   display: flex;
-  justify-content: space-evenly;
+  padding: 3rem 5rem;
   flex-wrap: wrap;
-  margin: 30;
-  max-width: 345;
-  align-items: stretch;
+  justify-content: space-between;
+  height: fit-content;
+  min-height: 1000px;
 }
 .items {
   display: flex;
 }
-.card {
-  display: flex;
-  align-items: center;
-  max-width: 300px;
-  background: transparent;
-  text-align: center;
-  box-shadow: 3px 3px grey;
-  box-sizing: border-box;
-  min-height: 200px;
+.itemImg {
+  height: 200px;
+  object-fit: contain;
+  width: 100%;
 }
-.card-img-top {
-  max-width: 250px;
+.card {
+  padding: 10px;
+  width: 350px;
+  text-align: center;
 }
 .addButtons {
   display: flex;
@@ -72,5 +69,23 @@ body {
 }
 .addCart {
   display: flex;
+  justify-content: center;
+}
+.cart {
+  display: flex;
+  justify-content: center;
+}
+.emptyCart {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  display: flex;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }

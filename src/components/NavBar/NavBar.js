@@ -14,16 +14,16 @@ const NavBar = () => {
             <Link to="/" className="nav-item nav-link">
               Home
             </Link>
-            <Link to="/electronics" className="nav-item nav-link">
+            <Link to="/Electronics" className="nav-item nav-link">
               Electronics
             </Link>
-            <Link to="/jewelry" className="nav-item nav-link">
-              Jewelry
+            <Link to="/Jewelery" className="nav-item nav-link">
+              Jewelery
             </Link>
-            <Link to="/men's%20clothing" className="nav-item nav-link">
+            <Link to="/Men'sClothing" className="nav-item nav-link">
               Men's Clothing
             </Link>
-            <Link to="/women's%20clothing" className="nav-item nav-link">
+            <Link to="/Women'sClothing" className="nav-item nav-link">
               Women's Clothing
             </Link>
             <Link to="/AboutUs" className="nav-item nav-link">

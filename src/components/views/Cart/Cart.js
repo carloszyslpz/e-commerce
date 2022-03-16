@@ -10,7 +10,7 @@ const Cart = () => {
     0
   );
   return (
-    <div>
+    <div className="container cart">
       {prod.length > 0 ? (
         prod.map((item) => {
           return (
@@ -22,12 +22,32 @@ const Cart = () => {
                 </h5>
                 <p>${item.price}</p>
               </div>
-              <button onClick={() => setProd([])}>Borrar Todo</button>
-              <button onClick={() => removeItem(item.id)}>Borrar Item</button>
+              <button
+                onClick={() => setProd([])}
+                type="button "
+                className="btn btn-primary"
+              >
+                Borrar Todo
+              </button>
+              <button
+                onClick={() => removeItem(item.id)}
+                type="button "
+                className="btn btn-primary"
+              >
+                Borrar Item
+              </button>
               <Link to={"/CompraFinalizada"}>
-                <button onClick={() => setProd([])}>Finalizar Compra</button>{" "}
+                <button
+                  onClick={() => setProd([])}
+                  type="button "
+                  className="btn btn-primary"
+                >
+                  Finalizar Compra
+                </button>{" "}
               </Link>
-              <p>Precio Total: ${precioTotal}</p>
+              <div>
+                <h3>Precio Total: ${precioTotal}</h3>
+              </div>
             </div>
           );
         })

@@ -1,10 +1,10 @@
-import ItemList from "./ItemList";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Item from "../../../ItemListContainer/Item";
+import { db } from "../../../../Firebase/FirebaseConfig";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
-import { db } from "../../Firebase/FirebaseConfig";
-import { collection, query, getDocs } from "firebase/firestore";
-
-const ItemListContainer = () => {
+const Jewelry = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,7 +14,8 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(collection(db, "productos"));
+      const productRef = collection(db, "productos");
+      const q = query(productRef, where("category", "==", "Jewelery"));
       const docs = [];
       const querySnapshot = await getDocs(q);
 
@@ -25,7 +26,6 @@ const ItemListContainer = () => {
     };
     getProducts();
   }, []);
-
   return (
     <div className="spinner">
       {loading ? (
@@ -33,12 +33,20 @@ const ItemListContainer = () => {
           <span className="visually-hidden">Loading...</span>
         </div>
       ) : (
-        <div>
-          <ItemList items={productos} />
+        <div className="productos">
+          {productos.map((productos) => {
+            return (
+              <div key={productos.id}>
+                <Link to={`/Detalle/${productos.id}`}>
+                  <Item data={productos} />
+                </Link>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
   );
 };
 
-export default ItemListContainer;
+export default Jewelry;

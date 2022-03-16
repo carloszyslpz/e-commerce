@@ -1,14 +1,13 @@
 const AboutUs = () => {
   return (
-    <div>
-      {" "}
+    <div className="container">
       <h1>Nosotros</h1>
-      <p>
+      <h5>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, officiis.
         Molestias modi cumque quidem tenetur molestiae minima atque est? Dicta
         saepe perferendis vero eius incidunt voluptatibus cupiditate illo.
         Molestiae, quia.
-      </p>
+      </h5>
     </div>
   );
 };
