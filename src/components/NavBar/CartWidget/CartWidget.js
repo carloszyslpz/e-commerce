@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 const CartWidget = () => {
   const { cantidadItems } = useContext(CartContext);
 
-  let itemsPush = 0;
-
   return (
     <div className="numElement">
       <Link to={"/Cart"}>
