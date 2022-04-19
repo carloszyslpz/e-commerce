@@ -14,7 +14,13 @@ const Cart = () => {
       {prod.length > 0 ? (
         prod.map((item) => {
           return (
-            <div key={item.id}>
+            <div
+              key={item.id}
+              style={{
+                color: "black",
+                fontWeight: "bold",
+              }}
+            >
               <div>
                 <img src={item.image} alt="producto" width={"150px"}></img>
                 <h5>
@@ -23,24 +29,37 @@ const Cart = () => {
                 <p>${item.price}</p>
               </div>
               <button
-                onClick={() => setProd([])}
-                type="button "
-                className="btn btn-primary"
-              >
-                Borrar Todo
-              </button>
-              <button
                 onClick={() => removeItem(item.id)}
                 type="button "
                 className="btn btn-primary"
+                style={{
+                  color: "black",
+                  fontWeight: "bold",
+                }}
               >
-                Borrar Item
+                Borrar Artículo
               </button>
+              <button
+                onClick={() => setProd([])}
+                type="button "
+                className="btn btn-primary"
+                style={{
+                  color: "black",
+                  fontWeight: "bold",
+                }}
+              >
+                Borrar Todo
+              </button>
+
               <Link to={"/CompraFinalizada"}>
                 <button
                   onClick={() => setProd([])}
                   type="button "
                   className="btn btn-primary"
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                  }}
                 >
                   Finalizar Compra
                 </button>{" "}

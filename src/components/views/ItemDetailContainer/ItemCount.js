@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { useState } from "react";
 
 const ItemCount = ({ onAdd }) => {
@@ -18,7 +19,11 @@ const ItemCount = ({ onAdd }) => {
   };
   const add = () => {
     onAdd(counter);
-    alert("Agregaste un producto a tu carrito");
+    Swal.fire({
+      title: "Producto agregado correctamente",
+      icon: "success",
+      timer: 1500,
+    });
   };
   return (
     <>

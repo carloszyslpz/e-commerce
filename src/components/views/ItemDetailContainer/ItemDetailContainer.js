@@ -39,8 +39,10 @@ const ItemDetailContainer = () => {
   return (
     <div className="spinner">
       {loading ? (
-        <div className="spinner-grow" role="status">
-          <span className="visually-hidden">Loading...</span>
+        <div className="loader-wrapper">
+          <div className="loader">
+            <div className="loader loader-inner"></div>
+          </div>
         </div>
       ) : (
         detalles.map((detalles) => {

@@ -14,7 +14,14 @@ const ItemDetail = ({ data }) => {
   }
 
   return (
-    <div className="card container">
+    <div
+      className="card container"
+      style={{
+        textDecoration: "none",
+        color: "black",
+        fontWeight: "bold",
+      }}
+    >
       <div className="card-body">
         <h5 className="card-title">{data.title}</h5>
         <img src={data.image} alt="producto" width={"150px"}></img>
@@ -25,7 +32,15 @@ const ItemDetail = ({ data }) => {
         <ItemCount onAdd={onAdd} setAgregado={setAgregado} />
       ) : (
         <Link to={"/Cart"}>
-          <button onClick={onAdd} type="button " className="btn btn-primary">
+          <button
+            onClick={onAdd}
+            type="button "
+            className="btn btn-primary"
+            style={{
+              color: "black",
+              fontWeight: "bold",
+            }}
+          >
             Terminar mi Compra
           </button>
         </Link>
