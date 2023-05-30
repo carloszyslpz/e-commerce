@@ -1,4 +1,5 @@
 import { useState } from "react";
+import aboutUsImg from "../AboutUs/aboutUs.jpg";
 
 const AboutUs = () => {
   const [loading, setLoading] = useState(true);
@@ -14,14 +15,21 @@ const AboutUs = () => {
           </div>
         </div>
       ) : (
-        <div>
-          <h1>Nosotros</h1>
-          <h5>
+        <div
+          className="about"
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "bold",
+          }}
+        >
+          <img src={aboutUsImg} alt="aboutUsImg" className="aboutImg" />
+          <p className="aboutText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
             officiis. Molestias modi cumque quidem tenetur molestiae minima
             atque est? Dicta saepe perferendis vero eius incidunt voluptatibus
             cupiditate illo. Molestiae, quia.
-          </h5>
+          </p>
         </div>
       )}
     </div>

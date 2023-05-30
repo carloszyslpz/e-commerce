@@ -7,7 +7,7 @@ export const CartProvider = ({ children }) => {
   const [carga, setCarga] = useState(false);
 
   function cantidadItems() {
-    return prod.reduce((total, item) => total + item.cantidad, 0);
+    return prod.reduce((total, item) => total + item.cantidad, "");
   }
 
   function removeItem(id) {

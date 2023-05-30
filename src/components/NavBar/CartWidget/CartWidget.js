@@ -13,7 +13,7 @@ const CartWidget = () => {
           <img src={CartImg} alt="cart-icon" width={"30px"} />
         </button>
       </Link>
-      <h5>{cantidadItems()}</h5>
+      <strong>{cantidadItems()}</strong>
     </div>
   );
 };

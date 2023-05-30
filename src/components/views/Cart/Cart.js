@@ -65,7 +65,7 @@ const Cart = () => {
                 </button>{" "}
               </Link>
               <div>
-                <h3>Precio Total: ${precioTotal}</h3>
+                <h3>Precio Total: ${precioTotal.toFixed(2)}</h3>
               </div>
             </div>
           );

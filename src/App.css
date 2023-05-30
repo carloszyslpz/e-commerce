@@ -3,14 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background: whitesmoke;
-}
 .App-header {
-  background: linear-gradient(rgba(255, 255, 255, 0.932), grey);
-  min-width: 100%;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur;
   justify-content: space-between;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
 }
 .logo {
   width: 100px;
@@ -47,22 +48,28 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   height: fit-content;
-  min-height: 1000px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur;
 }
 .items {
   display: flex;
 }
 .card {
   padding: 10px;
-  width: 350px;
+  margin-bottom: 150px;
+  max-width: 250px;
+  max-height: 250px;
   text-align: center;
-  border-radius: 1rem;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur;
 }
 .itemImg {
   height: 200px;
   object-fit: contain;
-  width: 100%;
+  max-width: 80%;
   transition: transform 0.75s;
+  border-radius: 1rem;
 }
 .card:hover .itemImg {
   transform: scale(1.15);
@@ -129,4 +136,17 @@ body {
   100% {
     transform: scale(1) rotate(360deg);
   }
+}
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+}
+.aboutImg {
+  border-radius: 1rem;
+}
+.aboutText {
+  background-color: rgba(255, 255, 255, 0.7);
 }
